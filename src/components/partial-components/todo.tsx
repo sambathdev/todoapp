@@ -8,17 +8,18 @@ import {
   DialogTitle,
   DialogTrigger,
   DialogClose,
+  DialogDescription,
 } from '@/components/ui/dialog';
-import { Input } from '@/components/ui/input';
-import { toast } from 'sonner';
-import { CheckedState } from '@radix-ui/react-checkbox';
-import { Todo } from '@/models/todo';
-import { dateFormat } from '@/constants/date-format';
 import {
   deleteTodoApi,
   editTodoApi,
   toggleCompleteTodoApi,
 } from '@/services/todo';
+import { Input } from '@/components/ui/input';
+import { toast } from 'sonner';
+import { CheckedState } from '@radix-ui/react-checkbox';
+import { Todo } from '@/models/todo';
+import { dateFormat } from '@/constants/date-format';
 
 interface TodoBlockProps {
   todo: Todo;
@@ -26,7 +27,6 @@ interface TodoBlockProps {
 }
 
 const TodoBlock = ({ todo, setTodos }: TodoBlockProps) => {
-  console.log('Todo Block Render ...');
   const [temptTodoEdit, setTemptTodoEdit] = useState('');
   const [loading, setLoading] = useState(false);
 
@@ -171,6 +171,9 @@ const TodoBlock = ({ todo, setTodos }: TodoBlockProps) => {
             <DialogHeader>
               <DialogTitle>Edit Todo</DialogTitle>
             </DialogHeader>
+            <DialogDescription>
+              Make changes to your todo here. Click save when you're done.
+            </DialogDescription>
             <Input
               defaultValue={todo.title}
               onChange={(e) => {

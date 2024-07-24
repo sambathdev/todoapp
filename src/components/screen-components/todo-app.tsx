@@ -10,23 +10,20 @@ import { toast } from 'sonner';
 interface TodoListAppProps {}
 
 const TodoListApp = ({}: TodoListAppProps) => {
-  console.log('TodoApp Render...');
-
+  const [todos, setTodos] = useState<Todo[]>([]);
+  const [loading, setLoading] = useState(false);
   const [filters, setFilters] = useState<TodoFilters>({
     isCompleted: null,
     search: '',
     sortBy: 'date',
     sortType: 'asc',
   });
-  const [loading, setLoading] = useState(false);
-
-  const [todos, setTodos] = useState<Todo[]>([]);
 
   useEffect(() => {
     setLoading(true);
     getTodosApi()
       .then((data) => {
-        setTodos(data ? data : []);
+        setTodos(data);
       })
       .catch((er) => {
         toast.error(`Fail to get todos ${er.message}`);
@@ -37,7 +34,6 @@ const TodoListApp = ({}: TodoListAppProps) => {
   }, []);
 
   const displayTodos = useMemo(() => {
-    console.log('display todos calculate');
     let filteredTodos = todos;
 
     if (filters.isCompleted != null) {
@@ -76,13 +72,17 @@ const TodoListApp = ({}: TodoListAppProps) => {
       style={{ minHeight: '100vh' }}
     >
       <div className="bg-slate-100 flex flex-col p-4 rounded-lg shadow-md">
-        <h1 className="font-bold text-xl mb-4">TODO</h1>
+        <h1 className="font-bold text-xl mb-4">TODO APP</h1>
         <TodoForm setTodos={setTodos} />
         <TodoFilter filters={filters} setFilters={setFilters} />
         {loading && (
           <div className="flex items-center justify-center">Loading ...</div>
         )}
-        {todos.length == 0 && !loading && <div className="flex items-center justify-center text-slate-600">Todo is Empty.</div>}
+        {todos.length == 0 && !loading && (
+          <div className="flex items-center justify-center text-slate-600">
+            Todo is Empty.
+          </div>
+        )}
         <div>
           {displayTodos.map((todo) => (
             <React.Fragment key={todo.id}>

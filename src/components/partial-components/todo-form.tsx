@@ -1,6 +1,5 @@
 import { memo, useState } from 'react';
 import { Button } from '../ui/button';
-
 import { toast } from 'sonner';
 import { Input } from '../ui/input';
 import { Todo } from '@/models/todo';
@@ -13,9 +12,7 @@ interface TodoFormProps {
 const TodoForm = ({ setTodos }: TodoFormProps) => {
   const [loading, setLoading] = useState(false);
   const [todoString, setTodoString] = useState('');
-
-  console.log('Todo Form Render ...');
-
+  
   const createNewTodo = () => {
     if (!todoString) {
       toast('Please title your Todo!');
