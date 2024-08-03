@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useState } from 'react';
-import TodoBlock from '../partial-components/todo';
-import TodoForm from '../partial-components/todo-form';
-import TodoFilter from '../partial-components/todo-filter';
+import TodoBlock from '../../partial-components/todo';
+import TodoForm from '../../partial-components/todo-form';
+import TodoFilter from '../../partial-components/todo-filter';
 import { Todo } from '@/models/todo';
 import { TodoFilters } from '@/models/todo-filters';
 import { getTodosApi } from '@/services/todo';

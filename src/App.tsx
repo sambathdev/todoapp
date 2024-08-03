@@ -1,10 +1,12 @@
-import TodoListApp from './components/screen-components/todo-app';
+// import ChessApp from './components/screen-components/chess-app/chess-app';
+// import TodoListApp from './components/screen-components/todo-app/todo-app';
+import SumApp from './components/screen-components/sum-app/sum-app';
 
 function App() {
   return (
     <>
-      {/* there should be a react-router-dom componets to allow application to navitate to different routes*/}
-      <TodoListApp />
+      {/* <ChessApp /> */}
+      <SumApp />
     </>
   );
 }
