@@ -1,12 +1,22 @@
-// import ChessApp from './components/screen-components/chess-app/chess-app';
-// import TodoListApp from './components/screen-components/todo-app/todo-app';
-import SumApp from './components/screen-components/sum-app/sum-app';
+import { Link } from 'react-router-dom';
 
 function App() {
   return (
     <>
-      {/* <ChessApp /> */}
-      <SumApp />
+      <div className="w-screen h-screen flex flex-col items-center justify-center">
+        <div>Home Screen</div>
+        <div className="flex flex-col">
+          <Link to={'/chess'}>
+            <button>Chess</button>
+          </Link>
+          <Link to={'/todo'}>
+            <button>Todo</button>
+          </Link>
+          <Link to={'/2048'}>
+            <button>2048</button>
+          </Link>
+        </div>
+      </div>
     </>
   );
 }

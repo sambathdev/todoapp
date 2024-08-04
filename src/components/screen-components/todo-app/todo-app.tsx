@@ -69,7 +69,7 @@ const TodoListApp = ({}: TodoListAppProps) => {
   return (
     <div
       className=" flex justify-center items-center py-4 bg-red-300 px-2"
-      style={{ minHeight: '100vh' }}
+      style={{ minHeight: 'calc(100vh - 3rem)' }}
     >
       <div className="bg-slate-100 flex flex-col p-4 rounded-lg shadow-md">
         <h1 className="font-bold text-xl mb-4">TODO APP</h1>
