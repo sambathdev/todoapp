@@ -8,14 +8,14 @@ const Header = ({}: HeaderProps) => {
     <div className="fixed h-12 top-0 w-full bg-slate-200">
       <div className="flex justify-between h-full items-center px-4">
         <div>
-          <Link to="/">Home</Link>
+          <Link to="/todoapp">Home</Link>
         </div>
         <div className="flex gap-2 flex-wrap">
           {appNames.map((app) => {
             return (
               <NavLink
                 key={app.route}
-                to={`/${app.route}`}
+                to={`/todoapp/${app.route}`}
                 className={({ isActive }) => {
                   return isActive
                     ? 'px-2 py-1 bg-red-200 rounded-md'
