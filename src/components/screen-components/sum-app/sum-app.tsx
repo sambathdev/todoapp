@@ -166,7 +166,7 @@ const SumApp = ({}: SumAppProps) => {
   }, []);
 
   return (
-    <div className="flex flex-col justify-center items-center w-screen h-screen">
+    <div className="sum flex flex-col justify-center items-center w-screen">
       <h1 className="text-center" onClick={() => addRandomNumberToTheBoard()}>
         2048
       </h1>

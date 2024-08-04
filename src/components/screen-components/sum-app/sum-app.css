@@ -1,20 +1,20 @@
-.grid {
+.sum .grid {
   width: 800px;
   height: 800px;
   background-color: blue;
   position: relative;
 }
 
-.grid-block {
+.sum .grid-block {
   width: 200px;
   height: 200px;
   position: absolute;
 }
 
-.grid-block-even {
+.sum .grid-block-even {
   background-color: green;
 }
 
-.grid-block-odd {
+.sum .grid-block-odd {
   background-color: gray;
 }

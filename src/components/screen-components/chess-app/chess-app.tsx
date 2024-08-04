@@ -7,10 +7,7 @@ const ChessApp = ({}: ChessAppProps) => {
   //   []
   // ]
   return (
-    <div
-      className=" flex justify-center items-center py-4 bg-red-300 px-2"
-      style={{ minHeight: '100vh' }}
-    >
+    <div className=" flex justify-center items-center py-4 bg-red-300 px-2">
       <div className="grid">
         {Array(64)
           .fill(1)
