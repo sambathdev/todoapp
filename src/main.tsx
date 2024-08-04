@@ -16,6 +16,10 @@ import Header from './components/header.tsx';
 const router = createBrowserRouter([
   {
     path: '/',
+    element: <div>Home</div>,
+  },
+  {
+    path: '/todoapp',
     element: (
       <div className='pt-12'>
         <Header />
