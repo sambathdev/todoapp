@@ -3,11 +3,7 @@ import App from './App.tsx';
 import './index.css';
 
 import { Toaster } from './components/ui/sonner.tsx';
-import {
-  createBrowserRouter,
-  RouterProvider,
-  Outlet,
-} from 'react-router-dom';
+import { createBrowserRouter, RouterProvider, Outlet, Link } from 'react-router-dom';
 import TodoListApp from './components/screen-components/todo-app/todo-app.tsx';
 import ChessApp from './components/screen-components/chess-app/chess-app.tsx';
 import SumApp from './components/screen-components/sum-app/sum-app.tsx';
@@ -16,12 +12,12 @@ import Header from './components/header.tsx';
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <div>Home</div>,
+    element: <App />,
   },
   {
     path: '/todoapp',
     element: (
-      <div className='pt-12'>
+      <div className="pt-12">
         <Header />
         <Outlet />
         <Toaster />
@@ -30,7 +26,21 @@ const router = createBrowserRouter([
     children: [
       {
         path: '',
-        element: <App />,
+        element: (
+          <div className='py-20 flex flex-col items-center justify-center'>
+            <div className="flex flex-col">
+              <Link to={'/todoapp/chess'}>
+                <button>Chess</button>
+              </Link>
+              <Link to={'/todoapp/todo'}>
+                <button>Todo</button>
+              </Link>
+              <Link to={'/todoapp/2048'}>
+                <button>2048</button>
+              </Link>
+            </div>
+          </div>
+        ),
       },
       {
         path: 'todo',

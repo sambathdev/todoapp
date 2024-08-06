@@ -1,21 +1,16 @@
-import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function App() {
+  const navigate = useNavigate();
+  useEffect(() => {
+    navigate("/todoapp");
+    console.log(5555)
+  }, [])
   return (
     <>
       <div className="w-screen h-screen flex flex-col items-center justify-center">
-        <div>Home Screen</div>
-        <div className="flex flex-col">
-          <Link to={'/chess'}>
-            <button>Chess</button>
-          </Link>
-          <Link to={'/todo'}>
-            <button>Todo</button>
-          </Link>
-          <Link to={'/2048'}>
-            <button>2048</button>
-          </Link>
-        </div>
+        <div>Blank Screen For Github to Redirect</div>
       </div>
     </>
   );
